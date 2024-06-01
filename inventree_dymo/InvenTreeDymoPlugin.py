@@ -5,7 +5,6 @@ from django.utils.translation import gettext_lazy as _
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 from plugin import InvenTreePlugin
-from plugin.base.label.mixins import LabelItemType
 from plugin.machine.machine_types import LabelPrinterBaseDriver, LabelPrinterMachine
 from label.models import LabelTemplate
 
@@ -94,7 +93,7 @@ class DymoLabelPrinterDriver(LabelPrinterBaseDriver):
 
         super().__init__(*args, **kwargs)
 
-    def print_labels(self, machine: LabelPrinterMachine, label: LabelTemplate, items: QuerySet[LabelItemType], request: Request, **kwargs):
+    def print_labels(self, machine: LabelPrinterMachine, label: LabelTemplate, items: QuerySet, request: Request, **kwargs):
         """Print labels using a Dymo label printer."""
         printing_options = kwargs.get('printing_options', {})
 
