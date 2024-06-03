@@ -31,6 +31,7 @@ class DymoLabelPrinterDriver(LabelPrinterBaseDriver):
     SLUG = "dymo-driver"
     NAME = "Dymo Driver"
     DESCRIPTION = "Dymo label printing driver for InvenTree"
+    USE_BACKGROUND_WORKER = False
 
     def __init__(self, *args, **kwargs):
         self.MACHINE_SETTINGS = {
