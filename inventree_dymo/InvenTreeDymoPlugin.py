@@ -6,7 +6,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 from plugin import InvenTreePlugin
 from plugin.machine.machine_types import LabelPrinterBaseDriver, LabelPrinterMachine
-from label.models import LabelTemplate
+from report.models import LabelTemplate
 
 from .version import DYMO_PLUGIN_VERSION
 from .dymo import DymoLabel, RoleSelect, PrintDensity
